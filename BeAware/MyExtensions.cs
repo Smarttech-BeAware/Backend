@@ -27,11 +27,16 @@ namespace BeAware
                     var services = scope.ServiceProvider;
                     var dbContext = services.GetRequiredService<AppDbContext>();
 
+                    var seed = Environment.GetEnvironmentVariable("SEED");
                     //seed user data
-                    dbContext.Database.EnsureCreated();
-                    var user = SeedUserData();
-                    dbContext.Users.Add(user);
-                    dbContext.SaveChanges();
+                    if(seed == "true")
+                    {
+                        dbContext.Database.EnsureCreated();
+                        var user = SeedUserData();
+                        dbContext.Users.Add(user);
+                        dbContext.SaveChanges();
+                    }
+                    
                     //end seed
 
                     dbContext.Database.Migrate();
