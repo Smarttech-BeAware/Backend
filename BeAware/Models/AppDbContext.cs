@@ -22,7 +22,7 @@ namespace BeAware.Models
             modelBuilder.Entity<FiledReport>().HasNoKey();
             modelBuilder.Entity<ValidationRequest>().HasNoKey();
             modelBuilder.Entity<Location>().HasNoKey();
-            modelBuilder.Entity<User>().HasData(SeedUserData());
+            //modelBuilder.Entity<User>().HasData(SeedUserData());
 
             //Seed some data
             

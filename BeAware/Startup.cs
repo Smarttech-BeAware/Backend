@@ -31,7 +31,7 @@ namespace BeAware
         {
             //services.AddControllersWithViews();
             
-            if (_env.IsEnvironment("Development"))
+            if (_env.IsEnvironment("Staging"))
             {
                 services.AddEntityFrameworkNpgsql().AddDbContext<AppDbContext>(options =>
                 {
